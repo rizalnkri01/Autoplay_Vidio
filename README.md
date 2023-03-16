@@ -1,5 +1,10 @@
 # Autoplay_Vidio
 Alat Untuk Play Vidio Secara Otomatis
+
+#Bahan Nama File
+- Vidio : bumper1.mp4
+- Background : background.jpg
+
 # Dukungan
 - [Trakteer](https://trakteer.id/rizalnkri/tip).
 
