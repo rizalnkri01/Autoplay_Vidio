@@ -1,5 +1,5 @@
-# Autoplay_Vidio
-Alat Untuk Play Vidio Secara Otomatis
+# Autoplay Vidio
+Alat Untuk Play Vidio Secara Otomatis. Tinggal buka file index.html / Click 2X nanti akan dibukakan browsernya
 
 #Bahan Nama File
 - Vidio : bumper1.mp4
