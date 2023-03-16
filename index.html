@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Auto Play Vidio</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+  .bg {
+    /* The image used */
+    background-image: url("background.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .container {
+    padding-top: 700px;
+  }
+  .container input[type="text"] {
+    position: absolute;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    /* color: transparent; --> hapus baris ini */
+    text-shadow: 0 0 0 #fff;
+    width: 1000px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    outline: none;
+    color: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0;
+  }
+
+  </style>
+<body>
+  <div class="bg">
+    <!-- Form untuk memasukkan nomor -->
+    <div class="container">
+      <form id="myForm" action="" method="post" class="text-center">
+          <input type="text" id="nomor" name="nomor" autofocus class="form-control">
+      </form>
+    </div>
+  </div>
+
+ <!-- Video yang ingin dimainkan secara otomatis dalam mode fullscreen -->
+ <video id="myVideo" src="bumper1.mp4" style="display:none;" ></video>
+
+ <!-- JavaScript untuk mengatur tampilan video -->
+ <script>
+  // Dapatkan elemen form dan input dengan nama yang diinginkan
+  var form = document.getElementById("myForm");
+  var input = form.elements["nomor"];
+
+  // Atur tindakan yang dilakukan saat form disubmit
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // mencegah form untuk melakukan submit
+    var nomor = input.value;
+    if (nomor == "0001036302") {
+      var video = document.getElementById("myVideo");
+      video.style.display = "block";
+      video.autoplay = true;
+      video.muted = false;
+      video.play();
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+      }
+    } else {
+      alert("Nomor yang dimasukkan salah.");
+    }
+  });
+ </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</body>
+</html>
